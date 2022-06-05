@@ -10,7 +10,7 @@ BRANCH=$1
 PROFILE=$2
 
 BASE_PATH="/home/ubuntu/nextstep"
-DEPLOY_PATH="/infra-subway-deploy"
+DEPLOY_PATH="$BASE_PATH/infra-subway-deploy"
 
 function check_input() {
   if [ "$BRANCH" != "main" ]; then
@@ -73,7 +73,7 @@ if [[ $# -eq 2 ]]; then
   echo -e "${txtylw}  << 배포 스크립트 🧐 >>${txtylw}"
   echo -e "${txtred}=======================================${txtred}"
 
-  cd "$BASE_PATH" || exit
+  cd "$DEPLOY_PATH" || exit
 
   ## 변경 확인
   check_df;
